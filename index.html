@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Promotora | Business Support Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =========================================
+           1. CSS VARIABLES & RESET
+           ========================================= */
+        :root {
+            --primary-navy: #1A3C6B; /* Reliable Corporate Blue */
+            --secondary-blue: #3A6EA5; /* Accessible Blue */
+            --light-bg: #F8F9FA;
+            --dark-text: #333333;
+            --white: #FFFFFF;
+            
+            --font-head: 'Raleway', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+            
+            --container-width: 1200px;
+            --section-padding: 80px 0;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =========================================
+           2. UTILITIES
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+
+        .section-header {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            display: block;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-navy);
+            color: var(--white);
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-blue);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-navy);
+        }
+
+        /* =========================================
+           3. HEADER
+           ========================================= */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-head);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .logo span {
+            color: var(--secondary-blue);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        nav a:hover {
+            color: var(--primary-navy);
+        }
+
+        /* =========================================
+           4. HERO SECTION
+           ========================================= */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(26, 60, 107, 0.9), rgba(26, 60, 107, 0.8)), url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #E0E0E0;
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+        }
+
+        /* =========================================
+           5. ABOUT US
+           ========================================= */
+        .about {
+            padding: var(--section-padding);
+            background-color: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+        }
+
+        .about-img img {
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* =========================================
+           6. SERVICES
+           ========================================= */
+        .services {
+            padding: var(--section-padding);
+            background-color: var(--light-bg);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 4px;
+            transition: var(--transition);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-bottom: 3px solid var(--primary-navy);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* =========================================
+           7. ADVANTAGES
+           ========================================= */
+        .advantages {
+            padding: var(--section-padding);
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+
+        .advantages .section-subtitle {
+            color: #A0C4FF;
+        }
+
+        .advantages h2 {
+            color: var(--white);
+        }
+
+        .advantages p {
+            color: #E0E0E0;
+        }
+
+        .adv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .adv-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 4px;
+        }
+
+        .adv-item h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* =========================================
+           8. PROCESS
+           ========================================= */
+        .process {
+            padding: var(--section-padding);
+            background-color: var(--white);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            position: relative;
+        }
+
+        .step-num {
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin: 0 auto 20px auto;
+            font-size: 1.2rem;
+        }
+
+        /* =========================================
+           9. CONTACT
+           ========================================= */
+        .contact {
+            padding: var(--section-padding);
+            background-color: var(--light-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+            background: var(--white);
+            padding: 50px;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item h5 {
+            color: var(--secondary-blue);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-weight: 600;
+            margin: 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 900px) {
+            .hero h1 { font-size: 2.5rem; }
+            .about-grid, .contact-container { grid-template-columns: 1fr; }
+            .adv-grid, .process-steps { flex-direction: column; }
+            .nav-wrapper { flex-direction: column; gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">FINANCE <span>PROMOTORA</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#advantages">Why Us</a></li>
+                    <li><a href="#process">Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Streamlining Your Administrative Success</h1>
+            <p>Finance Promotora de Vendas provides essential business support and administrative services. We optimize your operations so you can focus on growth.</p>
+            <a href="#contact" class="btn btn-outline">Start Collaboration</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="section-subtitle">Our Mission</span>
+                <h2 class="section-title">Supporting Business Efficiency</h2>
+                <p>Located in Itabirito, Minas Gerais, FINANCE PROMOTORA DE VENDAS LTDA is a dedicated provider of business support services. Under the leadership of Diego Alexandre Rodrigues Cabral, we specialize in streamlining administrative functions for companies of all sizes.</p>
+                <p>We operate within the "Administrative and Support Services" sector, offering a range of solutions from office administration to adjustment and collection services. Our goal is to reduce the operational burden on our clients, allowing them to allocate resources more effectively.</p>
+                <p>Whether you need assistance with back-office management or specialized support in debt collection, our team delivers professional, compliant, and results-driven service.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Office Administration">
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">What We Do</span>
+                <h2 class="section-title">Support Solutions</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">&#128188;</div> <h3>Administrative Support</h3>
+                    <p>We provide comprehensive office administrative services, handling data entry, scheduling, and documentation management to ensure smooth daily operations.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">&#128203;</div> <h3>Collection Services</h3>
+                    <p>Our adjustment and collection services help businesses recover outstanding debts efficiently while maintaining professional relationships with debtors.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">&#128101;</div> <h3>Business Support</h3>
+                    <p>From facilities support to general business consultancy, we offer tailored solutions to address specific operational challenges in the Minas Gerais market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle" style="color:#fff;">Why Partner With Us</span>
+                <h2 class="section-title">The Finance Promotora Edge</h2>
+            </div>
+
+            <div class="adv-grid">
+                <div class="adv-item">
+                    <h3>Local Expertise</h3>
+                    <p>Based in Itabirito, we have a deep understanding of the local business environment and regulatory requirements in Minas Gerais.</p>
+                </div>
+                <div class="adv-item">
+                    <h3>Operational Efficiency</h3>
+                    <p>We utilize streamlined processes and modern tools to deliver support services faster and more accurately than in-house teams.</p>
+                </div>
+                <div class="adv-item">
+                    <h3>Dedicated Leadership</h3>
+                    <p>Principal Diego Alexandre Rodrigues Cabral ensures that every client receives personalized attention and high-quality service standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">How We Work</span>
+                <h2 class="section-title">Service Workflow</h2>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Consultation</h3>
+                    <p>We assess your current administrative needs and identify areas for improvement or support.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>Implementation</h3>
+                    <p>Our team integrates seamlessly with your operations to begin providing support services.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Optimization</h3>
+                    <p>We continuously monitor performance and adjust strategies to maximize efficiency and results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <span class="section-subtitle">Get In Touch</span>
+                    <h3>Contact Our Team</h3>
+                    
+                    <div class="info-item">
+                        <h5>Headquarters</h5>
+                        <p>ITABIRITO, MINAS GERAIS<br>Brazil</p>
+                    </div>
+                    
+                    <div class="info-item">
+                        <h5>Electronic Mail</h5>
+                        <p>info@financepromotoradevendas.info</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h5>Principal</h5>
+                        <p>Diego Alexandre Rodrigues Cabral</p>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="text" placeholder="Subject">
+                        <textarea placeholder="How can we support your business?"></textarea>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 FINANCE PROMOTORA DE VENDAS LTDA. All Rights Reserved.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">Business Support & Administrative Services</p>
+        </div>
+    </footer>
+
+</body>
+</html>
